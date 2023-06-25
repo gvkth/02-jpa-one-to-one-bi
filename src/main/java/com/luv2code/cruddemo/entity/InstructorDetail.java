@@ -78,7 +78,7 @@ public class InstructorDetail {
      * Thêm liên kết đến entity cha - bidirectional
       */
     //add @oneToOne annotation
-            @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL) //là tên property trong class Instructor trỏ xuống con InstructorDetail
+            @OneToOne(mappedBy = "instructorDetail",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}) //là tên property trong class Instructor trỏ xuống con InstructorDetail
     private Instructor instructor;
 
     public Instructor getInstructor() {
