@@ -38,7 +38,7 @@ public class InstructorDetail {
 
     public InstructorDetail(String youtubeChannel, String hobby) {
         this.youtubeChannel = youtubeChannel;
-        this.hobby = hobby;
+        this.hobby = hobby;//test
     }
 
     public int getId() {
