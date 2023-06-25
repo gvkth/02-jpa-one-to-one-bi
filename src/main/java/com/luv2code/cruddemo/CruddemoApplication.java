@@ -21,8 +21,23 @@ public class CruddemoApplication {
 			//System.out.println("Hello World");
 //			createInstructor(appDAO);
 //			findInstructor(appDAO);
-			removeInstructor(appDAO);
+//			removeInstructor(appDAO);
+			findInstructorDetail(appDAO);
 		};
+	}
+
+	private void findInstructorDetail(AppDAO appDAO) {
+		//get the instructor detail object
+		int theId = 3;
+		InstructorDetail tempInstructorDetail  =appDAO.findInstructorDetailById(theId);
+		//print the instructor detail
+		System.out.println("tempInstructorDetail: "+tempInstructorDetail);
+
+		//print the associated instructor
+		System.out.println("the associated instructor: "+tempInstructorDetail.getInstructor());
+
+		System.out.println("Done!");
+
 	}
 
 	private void removeInstructor(AppDAO appDAO) {
@@ -42,22 +57,22 @@ public class CruddemoApplication {
 	}
 
 	private void createInstructor(AppDAO appDAO) {
-		/*//create the instructor
+		//create the instructor
 		Instructor tempInstructor = new Instructor("Chad","Darby","darby@luv2code.com");
 
 		//create the instructor detail
 		InstructorDetail tempInstructorDetail = new InstructorDetail(
 				"http://www.luv2code.com/youtube",
-				"Luv 2 code");*/
+				"Luv 2 code");
 
 
-		//create the instructor
+		/*//create the instructor
 		Instructor tempInstructor = new Instructor("Madhu","Patel","madhu@luv2code.com");
 
 		//create the instructor detail
 		InstructorDetail tempInstructorDetail = new InstructorDetail(
 				"http://www.luv2code.com/youtube",
-				"Guitar");
+				"Guitar");*/
 
 		//associate the objects
 		tempInstructor.setInstructorDetail(tempInstructorDetail);

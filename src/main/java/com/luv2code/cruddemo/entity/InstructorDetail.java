@@ -73,4 +73,19 @@ public class InstructorDetail {
                 ", hobby='" + hobby + '\'' +
                 '}';
     }
+
+    /**
+     * Thêm liên kết đến entity cha - bidirectional
+      */
+    //add @oneToOne annotation
+            @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL) //là tên property trong class Instructor trỏ xuống con InstructorDetail
+    private Instructor instructor;
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
 }

@@ -1,6 +1,7 @@
 package com.luv2code.cruddemo.dao;
 
 import com.luv2code.cruddemo.entity.Instructor;
+import com.luv2code.cruddemo.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.transaction.Transactional;
@@ -39,5 +40,10 @@ public class AppDAOImpl implements AppDAO{
 
         //delete the instructor
         entityManager.remove(tempInstructor);//MAGIC: this will ALSO delete the instructor details object because of CascadeType.ALL
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int theId) {
+        return entityManager.find(InstructorDetail.class,theId);
     }
 }
